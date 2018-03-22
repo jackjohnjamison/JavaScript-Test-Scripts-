@@ -48,21 +48,20 @@
         
         <script type="text/javascript">
             
-            var switch_bool = false; // Holds if the switch is on or off
-            
             var function_array = [
                 function() {
                     document.getElementById("target_div").style.background="lightgreen"; // On function
                 },
                 function() {
                     document.getElementById("target_div").style.background="hotpink"; // Off function
-                }
+                },
+                false // Holds if the switch is on or off
             ];
             
-            function my_switch() { // Takes the bool_index as an int, calls the function by index and switches bool's position 
-                var bool_to_index = ~~switch_bool;
-                function_array[bool_to_index]();
-                switch_bool = !switch_bool;
+            function my_switch(a) { // Takes the bool_index as an int, calls the function by index and switches bool's position 
+                var bool_to_index = ~~a[2];
+                a[bool_to_index]();
+                return !a[2];
             }
             
         </script>
@@ -74,7 +73,7 @@
         <div class="page_wrap" >
             <div class="inner_wrap">
                 <div id="target_div"></div>
-                <button type="button" onclick="my_switch()">Switch</button>
+                <button type="button" onclick="function_array[2] = my_switch(function_array)">Switch</button>
             </div>
         </div>
         
