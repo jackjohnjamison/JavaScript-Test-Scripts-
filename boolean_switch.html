@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="John(Jack) Jamison">
+        
+        <title></title>
+        
+        <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <style>
+            
+            html, body {
+                height: 100%;
+            }
+            
+            body {
+                background: lightblue;
+            }
+            
+            .page_wrap {
+                height: 20em;
+                width: 20em;
+                margin: 10em auto;
+            }
+            
+            .inner_wrap {
+                padding: 3em;
+                text-align: center;
+                background: white;
+            }
+            
+            #target_div {
+                width: 5em;
+                height: 5em;
+                background: hotpink;
+                margin: 1em auto;
+            }
+            
+        </style>
+        
+        <script type="text/javascript">
+            
+            var switch_bool = false; // Holds if the switch is on or off
+            
+            var function_array = [
+                function() {
+                    document.getElementById("target_div").style.background="lightgreen"; // On function
+                },
+                function() {
+                    document.getElementById("target_div").style.background="hotpink"; // Off function
+                }
+            ];
+            
+            function my_switch() { // Takes the bool_index as an int, calls the function by index and switches bool's position 
+                var bool_to_index = ~~switch_bool;
+                function_array[bool_to_index]();
+                switch_bool = !switch_bool;
+            }
+            
+        </script>
+
+    </head>
+    
+    <body>
+        
+        <div class="page_wrap" >
+            <div class="inner_wrap">
+                <div id="target_div"></div>
+                <button type="button" onclick="my_switch()">Switch</button>
+            </div>
+        </div>
+        
+    </body>
+    
+</html>
