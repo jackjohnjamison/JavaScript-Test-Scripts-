@@ -46,20 +46,18 @@
             
         </style>
         
-        <script type="text/javascript">
+        <script>
             
-            var switch_state = 0;
-            
-            var function_array = [
-                function() {
-                    document.getElementById("target_div").style.background="lightgreen"; // On function
-                    return 1;
-                },
-                function() {
-                    document.getElementById("target_div").style.background="hotpink"; // Off function
-                    return 0;
+            var offOn = {
+                switch_state : false,
+                
+                colorArray : [ "lightgreen", "hotpink" ],
+                
+                colorSwitch : function(targetDiv) {
+                    document.getElementById(targetDiv).style.background = offOn.colorArray[~~offOn.switch_state];
+                    offOn.switch_state = !offOn.switch_state;
                 }
-            ];
+            };
             
         </script>
 
@@ -70,7 +68,7 @@
         <div class="page_wrap" >
             <div class="inner_wrap">
                 <div id="target_div"></div>
-                <button type="button" onclick="switch_state = function_array[switch_state]()">Switch</button>
+                <button type="button" onclick="offOn.colorSwitch('target_div')">Switch</button>
             </div>
         </div>
         
