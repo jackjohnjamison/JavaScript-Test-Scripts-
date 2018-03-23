@@ -48,14 +48,14 @@
         
         <script>
             
-            var offOn = {
-                switch_state : false,
+            var colorSwitcher = {
+                switchState : false,
                 
                 colorArray : [ "lightgreen", "hotpink" ],
                 
-                colorSwitch : function(targetDiv) {
-                    document.getElementById(targetDiv).style.background = offOn.colorArray[~~offOn.switch_state];
-                    offOn.switch_state = !offOn.switch_state;
+                switchFunction : function(targetDiv) {
+                    document.getElementById(targetDiv).style.background = colorSwitcher.colorArray[~~colorSwitcher.switchState];
+                    colorSwitcher.switchState = !colorSwitcher.switchState;
                 }
             };
             
@@ -68,7 +68,7 @@
         <div class="page_wrap" >
             <div class="inner_wrap">
                 <div id="target_div"></div>
-                <button type="button" onclick="offOn.colorSwitch('target_div')">Switch</button>
+                <button type="button" onclick="colorSwitcher.switchFunction('target_div')">Switch</button>
             </div>
         </div>
         
