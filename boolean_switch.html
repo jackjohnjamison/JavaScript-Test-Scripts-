@@ -54,8 +54,8 @@
                 colorArray : [ "lightgreen", "hotpink" ],
                 
                 switchFunction : function(targetDiv) {
-                    document.getElementById(targetDiv).style.background = colorSwitcher.colorArray[~~colorSwitcher.switchState];
-                    colorSwitcher.switchState = !colorSwitcher.switchState;
+                    document.getElementById(targetDiv).style.background = this.colorArray[~~this.switchState];
+                    this.switchState = !this.switchState;
                 }
             };
             
